@@ -1,0 +1,2 @@
+import test from 'node:test'; import assert from 'node:assert/strict'; import { readFile } from 'node:fs/promises'; import { scheduleStates } from '../src/domain.js';
+test('轮岗资料中的时间和资质可用于排程', async () => { const data=JSON.parse(await readFile(new URL('../fixtures/rotation-context.json', import.meta.url))); assert.ok(scheduleStates.includes(data.scheduleState)); assert.ok(data.teacher.qualifications.includes(data.demand.qualification)); assert.ok(Date.parse(data.demand.endsAt)>Date.parse(data.demand.startsAt)); assert.ok(data.travelMinutes>0); });
