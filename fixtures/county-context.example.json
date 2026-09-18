@@ -1,0 +1,38 @@
+{
+  "teachers": [
+    { "id": "T-301", "name": "张老师", "qualifications": ["math-middle"], "homeSchool": "S-CENTRAL" },
+    { "id": "T-302", "name": "李老师", "qualifications": ["math-middle", "phys-middle"], "homeSchool": "S-CENTRAL" },
+    { "id": "T-303", "name": "王老师", "qualifications": ["math-middle"], "homeSchool": "S-CENTRAL" }
+  ],
+  "schools": [
+    { "id": "S-CENTRAL", "name": "中心校区" },
+    { "id": "S-RURAL-1", "name": "东乡九年制学校" },
+    { "id": "S-RURAL-2", "name": "西乡九年制学校" }
+  ],
+  "demands": [
+    {
+      "id": "D-101",
+      "school": "S-RURAL-1",
+      "qualification": "math-middle",
+      "startsAt": "2026-09-14T08:00:00+08:00",
+      "endsAt": "2026-09-18T17:00:00+08:00",
+      "priority": "critical"
+    },
+    {
+      "id": "D-102",
+      "school": "S-RURAL-2",
+      "qualification": "math-middle",
+      "startsAt": "2026-09-21T08:00:00+08:00",
+      "endsAt": "2026-09-25T17:00:00+08:00",
+      "priority": "normal"
+    }
+  ],
+  "travelMatrix": {
+    "S-CENTRAL": { "S-RURAL-1": 45, "S-RURAL-2": 70 },
+    "S-RURAL-1": { "S-CENTRAL": 45, "S-RURAL-2": 30 },
+    "S-RURAL-2": { "S-CENTRAL": 70, "S-RURAL-1": 30 }
+  },
+  "minContiguousDays": 3,
+  "minRestMinutes": 600,
+  "travelBufferMinutes": 20
+}
